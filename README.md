@@ -1,4 +1,4 @@
-# mras
+# MRas
 ### A bash script to manage and monitor Raspberry Pi over ssh
 ### It's just a personal tutorial project for *fun* :blush:
 # 
