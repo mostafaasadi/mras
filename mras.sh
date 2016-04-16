@@ -35,7 +35,8 @@ option1_function (){
 echo -e "\n\t\tchose option : "
 echo -e "\t\t\t[1]  ssh to Pi "
 echo -e "\t\t\t[2]  Monitor Pi "
-echo -e "\t\t\t[3]  Config and contorol \n"
+echo -e "\t\t\t[3]  Config and contorol "
+echo -e "\t\t\t[4]  help and version \n"
 read -p "                              option number : " option
 }
 
@@ -50,7 +51,16 @@ option2_function (){
   echo -e "\t\t\t[7] usb hardware "
   echo -e "\t\t\t[8] Networking \n"
 }
+hv_function (){
+  echo -e "\n\t\t\tMRas v0.1 "
+  echo -e "\n\t\t\t\tA bash script to manage and monitor Raspberry Pi over ssh"
+  echo -e "\t\t\t\tIt's just a personal tutorial project for fun ! "
+  echo -e "\n\t\t\t License"
+  echo -e "\t\t\t\t This program is free software ; you can redistribute it and/or modify it
+  \t\t\t\t under the terms of the GNU General Public License as published by the Free Software Foundation"
+  echo -e "\t\t\t\t\t https://github.com/mostafaasadi/mras\n\n"
 
+}
 clear screen
 ip=`cat .iplog.txt`
 user=`cat .userlog.txt`
@@ -131,4 +141,6 @@ esac
      clear screen
      ssh $user@$ip 'sudo shutdown -r now'
    fi
+ elif [ "$option" == "4" ];then
+   hv_function
 fi
